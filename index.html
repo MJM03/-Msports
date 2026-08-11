@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Msports - catálogo virtual de ropa deportiva y urbana." />
+  <title>Msports | Catálogo Virtual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">M</span>
+        <span>Msports</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="cart-button" id="cartButton" aria-label="Ver carrito">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NUEVA COLECCIÓN</span>
+          <h1>Viste tu ritmo.<br><span>Entrena con estilo.</span></h1>
+          <p>Ropa deportiva y urbana para moverte con comodidad, energía y actitud.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn-secondary" href="#contacto">Comprar por WhatsApp</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>+100</strong><span>Prendas</span></div>
+            <div><strong>24h</strong><span>Respuesta</span></div>
+            <div><strong>Lima</strong><span>Delivery</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-badge">MSPORTS</div>
+          <div class="hero-shape"></div>
+          <div class="hero-product">
+            <span>SPORT</span>
+            <strong>COLLECTION</strong>
+            <small>2026</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CATÁLOGO</span>
+            <h2>Encuentra tu próximo outfit</h2>
+          </div>
+          <label class="search-box">
+            <span>🔎</span>
+            <input id="searchInput" type="search" placeholder="Buscar productos..." />
+          </label>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="filter active" data-category="Todos">Todos</button>
+          <button class="filter" data-category="Polos">Polos</button>
+          <button class="filter" data-category="Shorts">Shorts</button>
+          <button class="filter" data-category="Conjuntos">Conjuntos</button>
+          <button class="filter" data-category="Casacas">Casacas</button>
+          <button class="filter" data-category="Accesorios">Accesorios</button>
+        </div>
+
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="empty-state hidden" id="emptyState">
+          <div>🏃</div>
+          <h3>No encontramos productos</h3>
+          <p>Prueba con otra búsqueda o categoría.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container benefits-grid">
+        <article><span>🚚</span><div><strong>Delivery rápido</strong><p>Coordinamos entregas en Lima y Callao.</p></div></article>
+        <article><span>💬</span><div><strong>Atención directa</strong><p>Consulta tallas, colores y stock por WhatsApp.</p></div></article>
+        <article><span>✨</span><div><strong>Estilo deportivo</strong><p>Prendas versátiles para entrenamiento y uso diario.</p></div></article>
+      </div>
+    </section>
+
+    <section class="about" id="nosotros">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">MSPORTS</span>
+          <h2>Moda deportiva hecha para tu día a día</h2>
+        </div>
+        <p>Msports nace para acercarte prendas deportivas modernas, cómodas y fáciles de combinar. Este catálogo es completamente editable para que puedas reemplazar productos, precios, fotos, tallas y colores cuando quieras.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container contact-card">
+        <div>
+          <span class="eyebrow">¿LISTO PARA COMPRAR?</span>
+          <h2>Pide tu prenda favorita</h2>
+          <p>Consulta disponibilidad y coordina tu pedido directamente por WhatsApp.</p>
+        </div>
+        <a id="whatsappMain" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <span>© 2026 Msports</span>
+      <span>Catálogo virtual</span>
+    </div>
+  </footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Tu selección</h3>
+      <button id="closeCart" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total referencial</span><strong id="cartTotal">S/ 0.00</strong></div>
+      <a id="cartWhatsapp" class="btn btn-whatsapp full" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
